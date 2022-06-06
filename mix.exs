@@ -14,7 +14,7 @@ defmodule RunTime.MixProject do
           config_providers: [
             {Toml.Provider,
              [
-               path: "/Users/robertboone/run_time/runtime.toml"
+               path: "./runtime.toml"
              ]}
           ]
         ]
@@ -26,18 +26,7 @@ defmodule RunTime.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {RunTime.Application, []},
-      releases: [
-        demo: [
-          include_executables_for: [:unix],
-          config_providers: [
-            {Toml.Provider,
-             [
-               path: "/Users/robertboone/run_time/runtime.toml"
-             ]}
-          ]
-        ]
-      ]
+      mod: {RunTime.Application, []}
     ]
   end
 
